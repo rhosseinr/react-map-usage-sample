@@ -1,0 +1,15 @@
+@import './variables';
+
+.btn {
+  border: none;
+  padding: $normal-padding;
+  background: $primary;
+  color: $white;
+  border-radius: $normal-radius;
+  box-shadow: $normal-shadow;
+
+  &:hover{
+    background: $primary-dark;
+    cursor: pointer;
+  }
+}

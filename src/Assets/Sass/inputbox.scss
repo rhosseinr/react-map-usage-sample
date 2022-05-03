@@ -1,0 +1,13 @@
+@import './variables';
+
+input{
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: $normal-padding;
+  border-radius: $normal-radius;
+  outline: none;
+
+  &:focus{
+    border-color: $primary;
+  }
+}

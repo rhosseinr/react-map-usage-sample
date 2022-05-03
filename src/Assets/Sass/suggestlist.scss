@@ -1,0 +1,18 @@
+@import "./variables";
+
+.suggest-list {
+  padding: $normal-padding;
+  background-color: $pure-white;
+  box-shadow: $normal-shadow;
+  border-radius: $normal-radius;
+}
+
+.suggest-item {
+  padding: $normal-padding;
+  border-radius: $normal-radius;
+  &:hover {
+    background-color: $primary;
+    color: $white;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,122 @@
+@import "./reset", "./variables", "inputbox.scss", "./suggestlist.scss","./button.scss";
+
+@font-face {
+  font-family: ".SFNSText-Light";
+  src: url("../Fonts/SFNSText-Light.eot");
+  src: url("../Fonts/SFNSText-Light.eot?#iefix") format("embedded-opentype"),
+    //Intervention: WebFonts use adaptive timeouts to take fallback fonts
+    // url("../Fonts/SFNSText-Light.otf") format("opentype"),
+    url("../Fonts/SFNSText-Light.svg") format("svg"),
+    url("../Fonts/SFNSText-Light.ttf") format("truetype"), url("../Fonts/SFNSText-Light.woff") format("woff"),
+    url("../Fonts/SFNSText-Light.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: ".SFNSText-Light", tahoma;
+  font-size: $base-font-size;
+  background-color: $light-gray;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  padding: $normal-padding;
+  height: 100%;
+}
+
+div#root,
+.app {
+  height: 100%;
+}
+
+/*search*/
+.search-container {
+  padding: $normal-padding;
+  margin: 0 auto;
+  max-width: 50em;
+}
+/*search*/
+
+/*result*/
+.result-container {
+  display: flex;
+  padding: $normal-padding;
+  min-height: 100%;
+  justify-content: space-evenly;
+
+  .map-section {
+    min-width: 60em;
+
+    .map-container {
+      width: 100%;
+      height: 100%;
+      border-radius: $normal-radius;
+      box-shadow: $normal-shadow;
+      min-height: 50vh;
+    }
+  }
+
+  .description-section {
+    padding: $normal-padding;
+    background-color: $pure-white;
+    border-radius: $normal-radius;
+    box-shadow: $normal-shadow;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 20em;
+    flex: 0;
+
+    .title {
+      font-weight: bold;
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      .image-preview {
+        height: 200px;
+        width: 18em;
+        object-fit: cover;
+        border-radius: $normal-radius;
+        box-shadow: $normal-shadow;
+        margin: $normal-margin;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .result-container {
+    flex-direction: column;
+    .description-section {
+      .image-list {
+        max-width: 100%;
+        flex-direction: row;
+
+        .image-preview{
+          width: 45%;
+        }
+      }
+    }
+
+    .map-section {
+      min-width: 100%;
+
+      .map-container {
+        margin-top: $normal-margin;
+      }
+    }
+  }
+}
+/*result*/

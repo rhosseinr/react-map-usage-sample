@@ -1,22 +1,18 @@
-import React from 'react';
-import './App.css';
+import React, { useState } from 'react';
+import { PlaceContext } from 'Contexts/PlaceContext';
+import { ResultPage, SearchPage } from 'Pages';
+import { mapboxSugesstionFeature } from 'Data/inline-typed';
 
 function App() {
+  const [showResult, setShowResult] = useState(false);
+  const [place, setPlace] = useState<mapboxSugesstionFeature>();
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <PlaceContext.Provider value={{ showResult, setShowResult, place, setPlace }}>
+        <>
+          {showResult ? <ResultPage /> : <SearchPage />}
+        </>
+      </PlaceContext.Provider>
     </div>
   );
 }
